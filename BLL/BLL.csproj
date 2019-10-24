@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\SerializationException.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Models\CategoryList.cs" />
+    <Compile Include="Models\SerializableList.cs" />
+    <Compile Include="Models\SerializeableMaker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\Serializable.cs" />
+    <Compile Include="SerializedWriteRead.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">
