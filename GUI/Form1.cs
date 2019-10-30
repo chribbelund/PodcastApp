@@ -94,6 +94,7 @@ namespace GUI {
 
         private void btnCChange_Click(object sender, EventArgs e)
         {
+
             if (lvCategory.SelectedItems.Count > 0)
             {
                 var confirmation = MessageBox.Show("Vill ändra namn på Kategorin?", "Kategorin", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
