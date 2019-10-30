@@ -43,13 +43,11 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.txtSection = new System.Windows.Forms.TextBox();
             this.lblSection = new System.Windows.Forms.Label();
-            this.txtCategories = new System.Windows.Forms.TextBox();
-            this.tableAll = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tableAll.SuspendLayout();
+            this.lvTable = new System.Windows.Forms.ListView();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvCategory = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // txtUrl
@@ -137,6 +135,7 @@
             // 
             // txtCategory
             // 
+            this.txtCategory.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtCategory.Location = new System.Drawing.Point(821, 261);
             this.txtCategory.Multiline = true;
             this.txtCategory.Name = "txtCategory";
@@ -164,6 +163,7 @@
             this.btnCNew.TabIndex = 29;
             this.btnCNew.Text = "Ny";
             this.btnCNew.UseVisualStyleBackColor = false;
+            this.btnCNew.Click += new System.EventHandler(this.btnCNew_Click);
             // 
             // btnCChange
             // 
@@ -252,87 +252,43 @@
             this.lblSection.TabIndex = 37;
             this.lblSection.Text = "Podcast #2: Avsnitt";
             // 
-            // txtCategories
+            // lvTable
             // 
-            this.txtCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategories.Location = new System.Drawing.Point(821, 71);
-            this.txtCategories.Multiline = true;
-            this.txtCategories.Name = "txtCategories";
-            this.txtCategories.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtCategories.Size = new System.Drawing.Size(450, 172);
-            this.txtCategories.TabIndex = 38;
+            this.lvTable.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvTable.HideSelection = false;
+            this.lvTable.Location = new System.Drawing.Point(16, 27);
+            this.lvTable.Name = "lvTable";
+            this.lvTable.Size = new System.Drawing.Size(724, 216);
+            this.lvTable.TabIndex = 39;
+            this.lvTable.UseCompatibleStateImageBehavior = false;
+            this.lvTable.View = System.Windows.Forms.View.Details;
             // 
-            // tableAll
+            // columnHeader2
             // 
-            this.tableAll.BackColor = System.Drawing.SystemColors.Window;
-            this.tableAll.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.tableAll.ColumnCount = 4;
-            this.tableAll.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableAll.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableAll.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
-            this.tableAll.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.80952F));
-            this.tableAll.Controls.Add(this.label9, 3, 0);
-            this.tableAll.Controls.Add(this.label8, 2, 0);
-            this.tableAll.Controls.Add(this.label7, 1, 0);
-            this.tableAll.Controls.Add(this.label6, 0, 0);
-            this.tableAll.Location = new System.Drawing.Point(17, 27);
-            this.tableAll.Name = "tableAll";
-            this.tableAll.RowCount = 4;
-            this.tableAll.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableAll.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableAll.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableAll.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableAll.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableAll.Size = new System.Drawing.Size(723, 216);
-            this.tableAll.TabIndex = 39;
+            this.columnHeader2.Text = "Namn";
+            this.columnHeader2.Width = 190;
             // 
-            // label9
+            // columnHeader3
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(552, 2);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(166, 51);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Kategori";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.columnHeader3.Text = "Frekvens";
+            this.columnHeader3.Width = 150;
             // 
-            // label8
+            // columnHeader4
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(347, 2);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(197, 51);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Frekvens";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.columnHeader4.Text = "Kategori";
+            this.columnHeader4.Width = 150;
             // 
-            // label7
+            // lvCategory
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(108, 2);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(231, 51);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Namn";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 51);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Avsnitt";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lvCategory.HideSelection = false;
+            this.lvCategory.Location = new System.Drawing.Point(821, 65);
+            this.lvCategory.Name = "lvCategory";
+            this.lvCategory.Size = new System.Drawing.Size(450, 178);
+            this.lvCategory.TabIndex = 40;
+            this.lvCategory.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
@@ -340,8 +296,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1283, 723);
-            this.Controls.Add(this.tableAll);
-            this.Controls.Add(this.txtCategories);
+            this.Controls.Add(this.lvCategory);
+            this.Controls.Add(this.lvTable);
             this.Controls.Add(this.lblSection);
             this.Controls.Add(this.txtSection);
             this.Controls.Add(this.lblDescription);
@@ -365,7 +321,6 @@
             this.Name = "Form1";
             this.Text = "Podcasts";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.tableAll.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,12 +347,11 @@
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.TextBox txtSection;
         private System.Windows.Forms.Label lblSection;
-        private System.Windows.Forms.TextBox txtCategories;
-        private System.Windows.Forms.TableLayoutPanel tableAll;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListView lvTable;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ListView lvCategory;
     }
 }
 
