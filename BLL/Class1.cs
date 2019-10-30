@@ -11,7 +11,7 @@ namespace BLL
     public class Class1 {
         static string dbFile = "data.txt";
 
-    public static void Main(string[] args)
+    public void CategoryCreator()
     {
         CategoryList categorys;
         if (File.Exists(dbFile))

@@ -14,7 +14,7 @@ namespace BLL
         public void Deserialize(string serializedString)
         {
             var listOfString = serializedString.Split('|');
-            if (listOfString.Length == 2)
+            if (listOfString.Length == 1)
             {
                 Categorys = listOfString[0];
             }
