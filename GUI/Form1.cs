@@ -56,13 +56,13 @@ namespace GUI {
                 );
                 lvCategory.Items.Add(listItem);
             }
+            titlar.Clear();
         }
         private void btnCNew_Click(object sender, EventArgs e) {
             var category = txtCategory.Text;
             if (category.Length > 5) {
                 titlar.Add(category);
                 txtCategory.Clear();
-                GC.Collect();
             } 
             /*else {
                 MessageBox.Show("Titeln kan bara innehålla text!");
@@ -94,7 +94,18 @@ namespace GUI {
 
         private void btnCChange_Click(object sender, EventArgs e)
         {
-            
+            if (lvCategory.SelectedItems.Count > 0)
+            {
+                var confirmation = MessageBox.Show("Vill ändra namn på Kategorin?", "Kategorin", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmation == DialogResult.Yes)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item = this.lvCategory.SelectedItems[0];
+                    item.SubItems[1].Text = txtCategory.Text;
+                }
+            }
+            else
+                MessageBox.Show("Du har inte valt någon kategori");
         }
     }
 }
