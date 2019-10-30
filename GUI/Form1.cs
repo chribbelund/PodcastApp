@@ -57,7 +57,7 @@ namespace GUI {
             }
         }
         private void btnCNew_Click(object sender, EventArgs e) {
-            /*var category = txtCategory.Text;
+            var category = txtCategory.Text;
             if (category == @"^[a - öA - Ö]{ 3,}$") {
                 titlar.Add(category);
                 txtCategory.Clear();
@@ -67,7 +67,7 @@ namespace GUI {
             }
             if (string.IsNullOrEmpty(category)) {
                 MessageBox.Show("Textfältet är tomt!");
-            }*/
+            }
             UpdateTextBox();
         }
     }
