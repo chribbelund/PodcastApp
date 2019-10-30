@@ -45,6 +45,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Models\CategoryList.cs" />
+    <Compile Include="Models\Info.cs" />
     <Compile Include="Models\SerializableList.cs" />
     <Compile Include="Models\SerializeableMaker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
