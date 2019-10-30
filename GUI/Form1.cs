@@ -62,6 +62,7 @@ namespace GUI {
             if (category.Length > 5) {
                 titlar.Add(category);
                 txtCategory.Clear();
+                GC.Collect();
             } 
             /*else {
                 MessageBox.Show("Titeln kan bara innehålla text!");
@@ -89,6 +90,11 @@ namespace GUI {
             }
             else
                 MessageBox.Show("Du har inte valt någon kategori");
+        }
+
+        private void btnCChange_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

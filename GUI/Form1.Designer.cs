@@ -189,6 +189,7 @@
             this.btnCChange.TabIndex = 30;
             this.btnCChange.Text = "Ändra";
             this.btnCChange.UseVisualStyleBackColor = false;
+            this.btnCChange.Click += new System.EventHandler(this.btnCChange_Click);
             // 
             // btnChange
             // 
