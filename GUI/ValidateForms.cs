@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace GUI {
     class ValidateForms {
-        
     }
 }
 
