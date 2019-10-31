@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -55,20 +56,57 @@ namespace GUI {
                 );
                 lvCategory.Items.Add(listItem);
             }
+            titlar.Clear();
         }
         private void btnCNew_Click(object sender, EventArgs e) {
             var category = txtCategory.Text;
-            if (category == @"^[a - öA - Ö]{ 3,}$") {
+            if (category.Length > 5) {
                 titlar.Add(category);
                 txtCategory.Clear();
-            } else {
+            } 
+            /*else {
                 MessageBox.Show("Titeln kan bara innehålla text!");
                 txtCategory.Clear();
-            }
+            }*/
             if (string.IsNullOrEmpty(category)) {
                 MessageBox.Show("Textfältet är tomt!");
             }
             UpdateTextBox();
+        }
+
+        private void btnCRemove_Click(object sender, EventArgs e)
+        {
+            if (lvCategory.SelectedItems.Count > 0)
+            {
+                var confirmation = MessageBox.Show("Vill du ta bort Kategorin?", "Kategorin", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmation == DialogResult.Yes)
+                {
+                    for (int i = lvCategory.SelectedItems.Count - 1; i >= 0; i--)
+                    {
+                        ListViewItem itm = lvCategory.SelectedItems[i];
+                        lvCategory.Items[itm.Index].Remove();
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Du har inte valt någon kategori");
+        }
+
+        private void btnCChange_Click(object sender, EventArgs e)
+        {
+
+            if (lvCategory.SelectedItems.Count > 0)
+            {
+                var confirmation = MessageBox.Show("Vill ändra namn på Kategorin?", "Kategorin", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmation == DialogResult.Yes)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item = this.lvCategory.SelectedItems[0];
+                    item.SubItems[1].Text = txtCategory.Text;
+                }
+            }
+            else
+                MessageBox.Show("Du har inte valt någon kategori");
         }
     }
 }
