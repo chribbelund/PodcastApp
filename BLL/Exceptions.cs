@@ -8,7 +8,7 @@ namespace BLL
 {
     class Exceptions : Exception
     {
-        public void ContainsaA()
+        public void ContainsaLetters()
         {
 
         }
@@ -19,6 +19,21 @@ namespace BLL
         }
 
         public void ContainsError()
+        {
+
+        }
+
+        public void CantContainNumbers()
+        {
+
+        }
+
+        public void CantContainLetters()
+        {
+
+        }
+
+        public void CocaKeta()
         {
 
         }
