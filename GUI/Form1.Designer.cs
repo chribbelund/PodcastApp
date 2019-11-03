@@ -35,7 +35,6 @@
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.btnCNew = new System.Windows.Forms.Button();
             this.btnCChange = new System.Windows.Forms.Button();
-            this.btnChange = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -45,10 +44,9 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvCategory = new System.Windows.Forms.ListView();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.btnChangeListView = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUrl
@@ -174,17 +172,6 @@
             this.btnCChange.UseVisualStyleBackColor = false;
             this.btnCChange.Click += new System.EventHandler(this.btnCChange_Click);
             // 
-            // btnChange
-            // 
-            this.btnChange.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChange.Location = new System.Drawing.Point(474, 354);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(130, 62);
-            this.btnChange.TabIndex = 34;
-            this.btnChange.Text = "Ändra";
-            this.btnChange.UseVisualStyleBackColor = false;
-            // 
             // btnNew
             // 
             this.btnNew.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -250,12 +237,12 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Namn";
-            this.columnHeader2.Width = 190;
+            this.columnHeader2.Width = 185;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Frekvens";
-            this.columnHeader3.Width = 150;
+            this.columnHeader3.Width = 165;
             // 
             // columnHeader4
             // 
@@ -273,24 +260,6 @@
             this.lvCategory.TabIndex = 40;
             this.lvCategory.UseCompatibleStateImageBehavior = false;
             this.lvCategory.View = System.Windows.Forms.View.List;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(17, 387);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(265, 29);
-            this.txtName.TabIndex = 41;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 354);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 25);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Namn:";
             // 
             // label7
             // 
@@ -311,21 +280,31 @@
             this.listView1.TabIndex = 44;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // btnChangeListView
+            // 
+            this.btnChangeListView.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnChangeListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeListView.Location = new System.Drawing.Point(474, 354);
+            this.btnChangeListView.Name = "btnChangeListView";
+            this.btnChangeListView.Size = new System.Drawing.Size(130, 62);
+            this.btnChangeListView.TabIndex = 45;
+            this.btnChangeListView.Text = "Ändra";
+            this.btnChangeListView.UseVisualStyleBackColor = false;
+            this.btnChangeListView.Click += new System.EventHandler(this.btnChangeListView_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1282, 688);
+            this.Controls.Add(this.btnChangeListView);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtName);
             this.Controls.Add(this.lvCategory);
             this.Controls.Add(this.lvTable);
             this.Controls.Add(this.lblSection);
             this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.btnChange);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnCChange);
@@ -361,7 +340,6 @@
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Button btnCNew;
         private System.Windows.Forms.Button btnCChange;
-        private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label lblDescription;
@@ -371,10 +349,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ListView lvCategory;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btnChangeListView;
     }
 }
 
